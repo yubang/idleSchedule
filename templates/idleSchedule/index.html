@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>空余时间表</title>
         <link rel="stylesheet" href="/static/base.css">
     </head>
@@ -12,13 +13,13 @@
                 <small>使用方法，输入几位纯数字，便可以拉取同一时间内查询同一数字的小伙伴的空闲时间表</small>
             </p>
             
-            <input type="number">
+            <input type="number" id="number">
             <p align="center">
                 <a href="javascript:getMessage();">查询</a>
             </p>
             
             <p align="center">
-                <small>
+                <small id="m">
                     你还没有加入分析
                 </small>
             </p>
@@ -29,14 +30,16 @@
             {% for temp in g.y %}
                 <tr>
                     {% for t in g.x %}
-                        <td id="td_{{ t }}_{{ temp }}" class="free">空<br>闲</td>
+                        <td id="td_{{ t }}_{{ temp }}" class="free" onclick="selectOneDiv({{ t }},{{ temp }})">空<br>闲</td>
                     {% endfor %}
                 </tr>
             {% endfor %}
         </table>
         
-        <input type="hidden" name="token" value="{{ g.token }}">
+        <input type="hidden" id="token" value="{{ g.token }}">
+        <input type="hidden" id="apiUrl" value="{{ g.apiUrl }}">
         <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="/static/jquery-json.js"></script>
         <script src="/static/base.js"></script>    
     </body>
 </html>

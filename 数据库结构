@@ -1,0 +1,9 @@
+create table if not exists idleSchedule_message(
+    id int(11) auto_increment,
+    token varchar(32) not null,
+    number varchar(32) not null,
+    message varchar(250) not null,
+    updateTime timestamp,
+    primary key(id),
+    unique(token,number)
+) engine = memory;

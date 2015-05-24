@@ -1,3 +1,4 @@
+body{background-color:#eee;}
 table,tr{width:100%;text-align:center;}
 tr,td{min-height:100px;}
 input[type='number']{width:100%;font-size:20px;border-radius:30px;border:1px solid #00FFFF;}
