@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>空余时间表</title>
+        <link rel="stylesheet" href="/static/base.css">
+    </head>
+    <body>
+        
+        <div>
+            <p align="center">
+                <small>使用方法，输入几位纯数字，便可以拉取同一时间内查询同一数字的小伙伴的空闲时间表</small>
+            </p>
+            
+            <input type="number">
+            <p align="center">
+                <a href="javascript:getMessage();">查询</a>
+            </p>
+            
+            <p align="center">
+                <small>
+                    你还没有加入分析
+                </small>
+            </p>
+            
+        </div>
+        
+        <table>
+            {% for temp in g.y %}
+                <tr>
+                    {% for t in g.x %}
+                        <td id="td_{{ t }}_{{ temp }}" class="free">空<br>闲</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        
+        <input type="hidden" name="token" value="{{ g.token }}">
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="/static/base.js"></script>    
+    </body>
+</html>

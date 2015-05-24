@@ -1,0 +1,5 @@
+table,tr{width:100%;text-align:center;}
+tr,td{min-height:100px;}
+input[type='number']{width:100%;font-size:20px;border-radius:30px;border:1px solid #00FFFF;}
+a{text-decoration:none;display:block;width:70px;height:30px;background-color:#00FFFF;line-height:30px;border-radius:30px;}
+.free{background-color:#53FF53;}
